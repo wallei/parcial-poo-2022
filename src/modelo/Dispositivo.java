@@ -10,25 +10,19 @@ public class Dispositivo {
 	private int id;
 	private String nombre;
 	private String codigo;
-	private List<Metrica> lstMetricas= new ArrayList<Metrica>();;
+	private List<Metrica> lstMetricas;
 	private Empresa empresa;
 
 
 
-	public Dispositivo(int id, String nombre, String codigo, List<Metrica> lstMetricas, Empresa empresa) {
+	public Dispositivo(int id, String nombre, String codigo,Empresa empresa) throws Exception {
 		this.id = id;
 		this.nombre = nombre;
-		this.codigo = codigo;
-		lstMetricas = new ArrayList<Metrica>();
+		setCodigo(codigo);
+		this.lstMetricas = new ArrayList<Metrica>();
 		this.empresa = empresa;
 	}
 
-	public Dispositivo(int id, String nombre, String codigo, Empresa empresa) {
-		this.id = id;
-		this.nombre = nombre;
-		this.codigo = codigo;
-		this.empresa = empresa;
-	}
 
 	@Override
 	public String toString() {
@@ -56,7 +50,8 @@ public class Dispositivo {
 		return codigo;
 	}
 
-	public void setCodigo(String codigo) {
+	public void setCodigo(String codigo) throws Exception {
+		validarCodigo(codigo);
 		this.codigo = codigo;
 	}
 
@@ -103,7 +98,7 @@ public class Dispositivo {
 	
 	// Traer List<Metrica>
 	
-	public List<Metrica> traerMetricas(LocalDate desde, LocalDate hasta) {
+	/*public List<Metrica> traerMetricas(LocalDate desde, LocalDate hasta) {
 
 		List<Metrica> lista = new ArrayList<Metrica>();
 
@@ -115,6 +110,46 @@ public class Dispositivo {
 
 		return lista;
 
+	}*/
+	
+	public boolean validarCodigo(String codigo) throws Exception {
+		if (codigo.length() != 5)
+			throw new Exception("Error: codigo con cantidad incorrecta de caracteres");
+
+		char[] codAux = codigo.toCharArray();
+
+		if (codAux[0] != 'A' && codAux[0] != 'B')
+			throw new Exception("Error: el codigo debe iniciar con A o B");
+
+		boolean cuatroNumeros = true;
+		int i = 1;
+		Integer suma = 0;
+
+		while (i < codigo.length() && cuatroNumeros == true) {
+			if (!Character.isDigit(codAux[i])) {
+				cuatroNumeros = false;
+			} else {
+				suma += Integer.valueOf(Character.toString(codAux[i]));
+			}
+			i++;
+		}
+
+		if (!cuatroNumeros)
+			throw new Exception("Error: codigo no cumple con el formato A1111");
+
+		if (codAux[0] == 'A') {
+
+			if (suma.intValue() % 2 != 0)
+				throw new Exception("Error: codigo invalido");
+
+		} else {
+
+			if (suma.intValue() % 2 == 0)
+				throw new Exception("Error: codigo invalido");
+
+		}
+
+		return true;
 	}
 	
 

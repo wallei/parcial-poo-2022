@@ -21,7 +21,15 @@ public class TestSistema {
 		System.out.println("------------------------------------------------------------");
 		
 	
-		sistema.agregarDispositivo("Sensor Humeda", "A2020", sistema.traerEmpresa("Empresa 1"));		
+		try {
+
+			sistema.agregarDispositivo("Sensor Humeda", "A2020", sistema.traerEmpresa("Empresa 1"));		
+
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
 		//System.out.println(sistema.getLstDispositivos());*/
 		
 		System.out.println("5) Traer el dispositivo con nombre Sensor Calor");

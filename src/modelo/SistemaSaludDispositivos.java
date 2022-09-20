@@ -8,8 +8,8 @@ public class SistemaSaludDispositivos {
 	private List<Dispositivo> lstDispositivos;
 
 	public SistemaSaludDispositivos() {
-		List<Empresa> lstEmpresas = new ArrayList<Empresa>();
-		List<Dispositivo> lstDispositivos = new ArrayList<Dispositivo>();
+		lstEmpresas = new ArrayList<Empresa>();
+		lstDispositivos = new ArrayList<Dispositivo>();
 	}
 
 	public List<Empresa> getLstEmpresas() {
@@ -25,7 +25,7 @@ public class SistemaSaludDispositivos {
 	public boolean agregarEmpresa(String nombre) {
 		int id = 1;
 
-		if (lstEmpresas.size() > 0)
+		if (!lstEmpresas.isEmpty())
 			id = lstEmpresas.get(lstEmpresas.size() - 1).getId() + 1;
 
 		return lstEmpresas.add(new Empresa(id, nombre));
@@ -45,7 +45,7 @@ public class SistemaSaludDispositivos {
 		return objeto;
 	}
 
-	public boolean agregarDispositivo(String nombre, String codigo, Empresa empresa) {
+	public boolean agregarDispositivo(String nombre, String codigo, Empresa empresa) throws Exception {
 		int id = 1;
 
 		if (lstDispositivos.size() > 0)
