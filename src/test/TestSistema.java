@@ -36,7 +36,9 @@ public class TestSistema {
 		LocalTime time1 = LocalTime.of(10, 00);
 		
 		
-		sistema.traerDispositivo("A2020").agregarMetrica(18, date18, time1);
+		System.out.println(sistema.traerDispositivo("A2020").agregarMetrica(18, date18, time1));
+		
+		
 		
 		
 	}

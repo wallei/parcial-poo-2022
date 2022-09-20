@@ -2,6 +2,7 @@ package modelo;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Dispositivo {
@@ -9,8 +10,10 @@ public class Dispositivo {
 	private int id;
 	private String nombre;
 	private String codigo;
-	private List<Metrica> lstMetricas;
+	private List<Metrica> lstMetricas= new ArrayList<Metrica>();;
 	private Empresa empresa;
+
+
 
 	public Dispositivo(int id, String nombre, String codigo, List<Metrica> lstMetricas, Empresa empresa) {
 		this.id = id;
@@ -26,6 +29,21 @@ public class Dispositivo {
 		this.codigo = codigo;
 		this.empresa = empresa;
 	}
+
+	
+
+	/*
+	 * 
+	 * public boolean validarCodigo(String codigo) { boolean ret = false; int suma =
+	 * 0; if (codigo.length() == 5) { if (codigo.charAt(0) == 'A' ||
+	 * codigo.charAt(0) == 'B') { if (codigo.charAt(0) == 'A') { for (int i = 1; i <
+	 * codigo.length(); i++) { suma += Character.getNumericValue(codigo.charAt(i));
+	 * } if (suma % 2 == 0) { ret = true; } } else { for (int i = 1; i <
+	 * codigo.length(); i++) { suma += Character.getNumericValue(codigo.charAt(i));
+	 * } if (suma % 2 != 0) { ret = true; } } } } return ret; }
+	 * 
+	 * 
+	 */
 
 	@Override
 	public String toString() {
@@ -72,19 +90,6 @@ public class Dispositivo {
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
 	}
-
-	/*
-	 * 
-	 * public boolean validarCodigo(String codigo) { boolean ret = false; int suma =
-	 * 0; if (codigo.length() == 5) { if (codigo.charAt(0) == 'A' ||
-	 * codigo.charAt(0) == 'B') { if (codigo.charAt(0) == 'A') { for (int i = 1; i <
-	 * codigo.length(); i++) { suma += Character.getNumericValue(codigo.charAt(i));
-	 * } if (suma % 2 == 0) { ret = true; } } else { for (int i = 1; i <
-	 * codigo.length(); i++) { suma += Character.getNumericValue(codigo.charAt(i));
-	 * } if (suma % 2 != 0) { ret = true; } } } } return ret; }
-	 * 
-	 * 
-	 */
 
 	public boolean agregarMetrica(int valor, LocalDate fecha, LocalTime hora) {
 
