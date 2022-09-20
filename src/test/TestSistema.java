@@ -26,7 +26,7 @@ public class TestSistema {
 		
 		System.out.println("5) Traer el dispositivo con nombre Sensor Calor");
 		System.out.println(sistema.traerDispositivo("A2020"));
-		
+
 		LocalDate date18 = LocalDate.of(2022, 9, 18);
 		LocalDate date19 = LocalDate.of(2022, 9, 19);
 		LocalDate date23 = LocalDate.of(2022, 9, 20);
@@ -34,11 +34,19 @@ public class TestSistema {
 		LocalDate date18a = LocalDate.of(2022, 9, 22);
 		
 		LocalTime time1 = LocalTime.of(10, 00);
-		
-		
+		LocalTime time2 = LocalTime.of(12, 30);
+		LocalTime time3 = LocalTime.of(15, 00);
+		LocalTime time4 = LocalTime.of(10, 00);
+		LocalTime time5 = LocalTime.of(10, 00);
+		System.out.println("------------------------------------------------------------");
+		System.out.println("6) Agregar las  metricas sobre el dispositivo: xxx");
 		System.out.println(sistema.traerDispositivo("A2020").agregarMetrica(18, date18, time1));
+		System.out.println(sistema.traerDispositivo("A2020").agregarMetrica(18, date19, time2));
+		System.out.println(sistema.traerDispositivo("A2020").agregarMetrica(18, date23, time3));
+		System.out.println(sistema.traerDispositivo("A2020").agregarMetrica(18, date20, time4));
+		System.out.println(sistema.traerDispositivo("A2020").agregarMetrica(18, date18a, time5));
 		
-		
+		System.out.println(sistema.traerDispositivo("A2020").traerMetrica(date19, time2));
 		
 		
 	}

@@ -96,5 +96,24 @@ public class Dispositivo {
 		return lstMetricas.add(new Metrica(valor, fecha, hora));
 
 	}
+	
+	// traer METRICA.
+	
+	public Metrica traerMetrica(LocalDate fecha, LocalTime hora) {
+		Metrica objeto = null;
+		int i = 0;
+
+		while (i < lstMetricas.size() && objeto == null) {
+			if (lstMetricas.get(i).getFecha().equals(fecha) &&
+					lstMetricas.get(i).getHora().equals(hora)
+					) {
+				objeto = lstMetricas.get(i);
+			}
+			i++;
+		}
+
+		return objeto;
+	}
+	
 
 }
