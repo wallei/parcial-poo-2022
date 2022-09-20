@@ -30,21 +30,6 @@ public class Dispositivo {
 		this.empresa = empresa;
 	}
 
-	
-
-	/*
-	 * 
-	 * public boolean validarCodigo(String codigo) { boolean ret = false; int suma =
-	 * 0; if (codigo.length() == 5) { if (codigo.charAt(0) == 'A' ||
-	 * codigo.charAt(0) == 'B') { if (codigo.charAt(0) == 'A') { for (int i = 1; i <
-	 * codigo.length(); i++) { suma += Character.getNumericValue(codigo.charAt(i));
-	 * } if (suma % 2 == 0) { ret = true; } } else { for (int i = 1; i <
-	 * codigo.length(); i++) { suma += Character.getNumericValue(codigo.charAt(i));
-	 * } if (suma % 2 != 0) { ret = true; } } } } return ret; }
-	 * 
-	 * 
-	 */
-
 	@Override
 	public String toString() {
 		return "Dispositivo [id=" + id + ", nombre=" + nombre + ", codigo=" + codigo + ", lstMetricas=" + lstMetricas
@@ -97,7 +82,7 @@ public class Dispositivo {
 
 	}
 	
-	// traer METRICA.
+	// Traer Metrica.
 	
 	public Metrica traerMetrica(LocalDate fecha, LocalTime hora) {
 		Metrica objeto = null;
@@ -114,6 +99,9 @@ public class Dispositivo {
 
 		return objeto;
 	}
+	
+	
+	// Traer List<Metrica>
 	
 
 }

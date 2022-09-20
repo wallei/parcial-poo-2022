@@ -45,7 +45,8 @@ public class TestSistema {
 		System.out.println(sistema.traerDispositivo("A2020").agregarMetrica(18, date23, time3));
 		System.out.println(sistema.traerDispositivo("A2020").agregarMetrica(18, date20, time4));
 		System.out.println(sistema.traerDispositivo("A2020").agregarMetrica(18, date18a, time5));
-		
+		System.out.println("------------------------------------------------------------");
+		System.out.println("7) Traer metrica con fecha= 2022-09-19 hora= 12:30");
 		System.out.println(sistema.traerDispositivo("A2020").traerMetrica(date19, time2));
 		
 		
