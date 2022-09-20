@@ -1,5 +1,8 @@
 package test;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 import modelo.SistemaSaludDispositivos;
 
 public class TestSistema {
@@ -24,8 +27,16 @@ public class TestSistema {
 		System.out.println("5) Traer el dispositivo con nombre Sensor Calor");
 		System.out.println(sistema.traerDispositivo("A2020"));
 		
+		LocalDate date18 = LocalDate.of(2022, 9, 18);
+		LocalDate date19 = LocalDate.of(2022, 9, 19);
+		LocalDate date23 = LocalDate.of(2022, 9, 20);
+		LocalDate date20 = LocalDate.of(2022, 9, 21);
+		LocalDate date18a = LocalDate.of(2022, 9, 22);
+		
+		LocalTime time1 = LocalTime.of(10, 00);
 		
 		
+		sistema.traerDispositivo("A2020").agregarMetrica(18, date18, time1);
 		
 		
 	}

@@ -34,46 +34,47 @@ public class SistemaSaludDispositivos {
 
 		return lstEmpresas.add(new Empresa(id, nombre));
 	}
-	
+
 	public Empresa traerEmpresa(String nombre) {
 		Empresa objeto = null;
-		int i=0;
-		
-		while (i < lstEmpresas.size() && objeto== null) {
+		int i = 0;
+
+		while (i < lstEmpresas.size() && objeto == null) {
 			if (lstEmpresas.get(i).getNombre().equals(nombre)) {
-				objeto=lstEmpresas.get(i);
+				objeto = lstEmpresas.get(i);
 			}
 			i++;
 		}
-		
+
 		return objeto;
 	}
-	
-	
+
 	public boolean agregarDispositivo(String nombre, String codigo, Empresa empresa) {
 		int id = 1;
-		
+
 		if (lstDispositivos.size() > 0)
 			id = lstDispositivos.get(lstDispositivos.size() - 1).getId() + 1;
-		
-		return lstDispositivos.add(new Dispositivo(id, nombre,codigo,empresa));
+
+		return lstDispositivos.add(new Dispositivo(id, nombre, codigo, empresa));
 	}
-	
+
 	public Dispositivo traerDispositivo(String codigo) {
 		Dispositivo objeto = null;
-		int i=0;
-		
-		while (i < lstDispositivos.size() && objeto== null) {
+		int i = 0;
+
+		while (i < lstDispositivos.size() && objeto == null) {
 			if (lstDispositivos.get(i).getCodigo().equals(codigo)) {
-				objeto=lstDispositivos.get(i);
+				objeto = lstDispositivos.get(i);
 			}
 			i++;
 		}
-		
+
 		return objeto;
-		
+
 	}
-		
+	
+
+	
 	
 
 }
