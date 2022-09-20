@@ -19,7 +19,7 @@ public class Dispositivo {
 		this.id = id;
 		this.nombre = nombre;
 		this.codigo = codigo;
-		this.lstMetricas = lstMetricas;
+		lstMetricas = new ArrayList<Metrica>();
 		this.empresa = empresa;
 	}
 
@@ -102,6 +102,20 @@ public class Dispositivo {
 	
 	
 	// Traer List<Metrica>
+	
+	public List<Metrica> traerMetricas(LocalDate desde, LocalDate hasta) {
+
+		List<Metrica> lista = new ArrayList<Metrica>();
+
+		for (int i = 0; i < lstMetricas.size(); i++) {
+			if (lstMetricas.get(i).getFecha().contains(desde) && lstMetricas.get(i).getFecha().contains(hasta)) {
+				lista.add(lstMetricas.get(i));
+			}
+		}
+
+		return lista;
+
+	}
 	
 
 }

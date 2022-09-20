@@ -4,27 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SistemaSaludDispositivos {
-	private List<Empresa> lstEmpresas = new ArrayList<Empresa>();
-	private List<Dispositivo> lstDispositivos = new ArrayList<Dispositivo>();
+	private List<Empresa> lstEmpresas;
+	private List<Dispositivo> lstDispositivos;
 
 	public SistemaSaludDispositivos() {
+		List<Empresa> lstEmpresas = new ArrayList<Empresa>();
+		List<Dispositivo> lstDispositivos = new ArrayList<Dispositivo>();
 	}
 
 	public List<Empresa> getLstEmpresas() {
 		return lstEmpresas;
 	}
 
-	public void setLstEmpresas(List<Empresa> lstEmpresas) {
-		this.lstEmpresas = lstEmpresas;
-	}
 
 	public List<Dispositivo> getLstDispositivos() {
 		return lstDispositivos;
 	}
 
-	public void setLstDispositivos(List<Dispositivo> lstDispositivos) {
-		this.lstDispositivos = lstDispositivos;
-	}
 
 	public boolean agregarEmpresa(String nombre) {
 		int id = 1;
